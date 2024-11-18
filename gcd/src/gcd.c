@@ -5,7 +5,7 @@
  - Filename: gcd.c
  - Author: Apostolos Panousakis
  - Description: A program that simulates the Euclidean Algorithm and calculates the greatest common divisor (GCD) of two numbers.
- */
+*/
 
 // Declare the gcd function that calculates the GCD using the Euclidian Algorithm and recursion
 long long gcd(long long num1,long long num2) {

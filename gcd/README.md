@@ -45,7 +45,7 @@ Example:
 ```sh
 $ ./gcd 36 7
 gcd(36, 7) = 1
-$ ./gcd -42 18
+$ ./gcd -42 9
 gcd(-42, 9) = 3
 $ ./gcd 1 2 3
 Usage: ./gcd <num1> <num2>

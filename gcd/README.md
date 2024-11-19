@@ -60,7 +60,7 @@ Check if the user has provided 3 arguments (including program name):
 ```sh
 if (argc != 3) {
     printf("Usage: %s <num1> <num2>\n",argv[0]);
-    return 1; // Unsuccessful termination with exit code 1
+    return 1;
 }
 ```
 
@@ -71,6 +71,6 @@ long long num1 = atoll(argv[1]);
 long long num2 = atoll(argv[2]);
 if (num1 == 0 || num2 == 0) {
     printf("Usage: %s <num1> <num2>\n",argv[0]);
-    return 1; // Unsuccessful termination with exit code 1
+    return 1;
 }
 ```

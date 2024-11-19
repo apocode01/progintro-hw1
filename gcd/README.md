@@ -32,7 +32,7 @@ gcc -O3 -Wall -Wextra -Werror -pedantic -o gcd gcd.c
 
 ## Usage
 
-In order for the program to run, we run it by giving 2 non-zero integers for arguments:
+In order for the program to run, it must be executed with two non-zero integers as arguments:
 
 ```sh
 ./gcd <num1> <num2>

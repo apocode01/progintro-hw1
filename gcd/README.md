@@ -32,7 +32,7 @@ gcc -O3 -Wall -Wextra -Werror -pedantic -o gcd gcd.c
 
 ## Usage
 
-In order for the program to run, we run it by giving 2 non-zero integers for arguments:
+In order for the program to run, it must be executed with two non-zero integers as arguments:
 
 ```sh
 ./gcd <num1> <num2>
@@ -45,7 +45,7 @@ Example:
 ```sh
 $ ./gcd 36 7
 gcd(36, 7) = 1
-$ ./gcd -42 18
+$ ./gcd -42 9
 gcd(-42, 9) = 3
 $ ./gcd 1 2 3
 Usage: ./gcd <num1> <num2>
@@ -60,7 +60,7 @@ Check if the user has provided 3 arguments (including program name):
 ```sh
 if (argc != 3) {
     printf("Usage: %s <num1> <num2>\n",argv[0]);
-    return 1; // Unsuccessful termination with exit code 1
+    return 1;
 }
 ```
 
@@ -71,6 +71,6 @@ long long num1 = atoll(argv[1]);
 long long num2 = atoll(argv[2]);
 if (num1 == 0 || num2 == 0) {
     printf("Usage: %s <num1> <num2>\n",argv[0]);
-    return 1; // Unsuccessful termination with exit code 1
+    return 1;
 }
 ```

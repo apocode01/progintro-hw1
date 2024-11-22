@@ -62,7 +62,6 @@ int main(int argc, char * argv[]) {
         printf("Negative numbers are not allowed\n");
         return 1;   
     }
-    printf("%lld\n%lld\n%lld\n%lld\n",m,e,N,bob(m,e,N));
     printf("%lld\n",bob(m,e,N));
     return 0;
 }

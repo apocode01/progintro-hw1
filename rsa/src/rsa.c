@@ -2,17 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int is_prime(long long num) {
-    if (num<=1) {
-        return 0;
-    }
-    for (long long i = 2 ; i*i<=num ; i++) {
-        if (num % i == 0) {
-            return 0;
-        }
-    }
-    return 1;
-}
+int is_prime(long long num);
 
 int main(int argc, char * argv[]) {
     if (argc != 6) {
@@ -42,9 +32,11 @@ int main(int argc, char * argv[]) {
     }
 
     long long m;
-    scanf("%lld",&m);
+    if ( scanf("%lld",&m) != 1 ) {
+        return 1;
+    }
+    
     long long N = p * q;
-
     if (m>=N) {
         printf("Message is larger than N\n");
         return 1;
@@ -55,4 +47,16 @@ int main(int argc, char * argv[]) {
         return 1;   
     }
     return 0;
+}
+
+int is_prime(long long num) {
+    if (num<=1) {
+        return 0;
+    }
+    for (long long i = 2 ; i*i<=num ; i++) {
+        if (num % i == 0) {
+            return 0;
+        }
+    }
+    return 1;
 }

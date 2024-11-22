@@ -7,16 +7,8 @@
  - Description: A program that simulates the Euclidean Algorithm and calculates the greatest common divisor (GCD) of two numbers.
 */
 
-// Declare the gcd function that calculates the GCD using the Euclidian Algorithm and recursion
-long long gcd(long long num1,long long num2) {
-    long long division_remainder = num1 % num2;
-    if (division_remainder == 0) {
-        return num2;
-    }
-    else {
-        return gcd(num2,division_remainder);
-    }
-}
+// Declare the gcd function
+long long gcd(long long num1,long long num2);
 
 int main(int argc, char * argv[]) {
     // Check if the user has provided 3 arguments (including program name)
@@ -45,4 +37,15 @@ int main(int argc, char * argv[]) {
 
     printf("gcd(%lld, %lld) = %lld\n",num1,num2,result);
     return 0; // Successful termination with exit code 0
+}
+
+// Calculate the GCD using the Euclidian Algorithm and recursion
+long long gcd(long long num1,long long num2) {
+    long long division_remainder = num1 % num2;
+    if (division_remainder == 0) {
+        return num2;
+    }
+    else {
+        return gcd(num2,division_remainder);
+    }
 }

@@ -3,6 +3,9 @@
 #include <stdlib.h>
 
 int is_prime(long long num);
+long long gcd(long long num1,long long num2);
+long long phi(long long num);
+long long power(long long base,long long exponent);
 
 int main(int argc, char * argv[]) {
     if (argc != 6) {
@@ -26,17 +29,30 @@ int main(int argc, char * argv[]) {
         return 1;
     }
 
-    if (is_prime(p) == 0 || is_prime(q) == 0) {
+    if (!is_prime(p) || !is_prime(q)) {
         printf("p and q must be prime\n");
         return 1;   
     }
 
+    long long N = p * q;
+
+    long long phi_N = phi(N);
+
+    if (gcd(e,phi_N) != 1) {
+        printf("e is not coprime with phi(N)\n");
+        return 1;
+    }
+
+    if ((e*d) % phi_N != 1) {
+        printf("e * d mod phi(N) is not 1\n");
+        return 1;
+    } 
+
     long long m;
-    if ( scanf("%lld",&m) != 1 ) {
+    if (scanf("%lld",&m) != 1) {
         return 1;
     }
     
-    long long N = p * q;
     if (m>=N) {
         printf("Message is larger than N\n");
         return 1;
@@ -46,6 +62,16 @@ int main(int argc, char * argv[]) {
         printf("Negative numbers are not allowed\n");
         return 1;   
     }
+
+    long long result;
+    long long c = power(m,e) % N;
+    if (strcmp(op,"enc")==0) {
+        result = c;
+    }
+    else {
+        result = power(c,d) % N;
+    }
+    printf("%lld\n",result);
     return 0;
 }
 
@@ -59,4 +85,37 @@ int is_prime(long long num) {
         }
     }
     return 1;
+}
+
+long long gcd(long long num1,long long num2) {
+    long long division_remainder = num1 % num2;
+    if (division_remainder == 0) {
+        return num2;
+    }
+    else {
+        return gcd(num2,division_remainder);
+    }
+}
+
+// we dont have to check when num is prime
+long long phi(long long num) {
+    long long count = 0;
+    for (long long i = 1 ; i<num ; i++) {
+        if (gcd(i,num)==1) {
+            count++;
+        }
+    }
+    return count;
+}
+
+long long power(long long base,long long exponent) {
+    if (exponent==0) {
+        return 1;
+    }
+    else if (exponent%2==1) {
+        return base*power(base*base,(exponent-1)/2);
+    }
+    else {
+        return power(base*base,exponent/2);
+    }
 }

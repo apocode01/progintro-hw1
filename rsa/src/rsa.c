@@ -5,7 +5,7 @@
 int is_prime(long long num);
 long long gcd(long long num1,long long num2);
 long long phi(long long num);
-long long power(long long base,long long exponent);
+long long bob(long long base,long long exponent,long long mod);
 
 int main(int argc, char * argv[]) {
     if (argc != 6) {
@@ -62,16 +62,8 @@ int main(int argc, char * argv[]) {
         printf("Negative numbers are not allowed\n");
         return 1;   
     }
-
-    long long result;
-    long long c = power(m,e) % N;
-    if (strcmp(op,"enc")==0) {
-        result = c;
-    }
-    else {
-        result = power(c,d) % N;
-    }
-    printf("%lld\n",result);
+    printf("%lld\n%lld\n%lld\n%lld\n",m,e,N,bob(m,e,N));
+    printf("%lld\n",bob(m,e,N));
     return 0;
 }
 
@@ -108,14 +100,10 @@ long long phi(long long num) {
     return count;
 }
 
-long long power(long long base,long long exponent) {
-    if (exponent==0) {
-        return 1;
+long long bob(long long base,long long exponent,long long mod) {
+    long long result = 1;
+    for (long long i=1 ; i<=exponent ; i++) {
+        result = (base*result) % mod; 
     }
-    else if (exponent%2==1) {
-        return base*power(base*base,(exponent-1)/2);
-    }
-    else {
-        return power(base*base,exponent/2);
-    }
+    return result;
 }

@@ -122,7 +122,7 @@ long long phi(long long num1,long long num2) {
 }
 
 // The mod_exp function calculates the value (a^b) mod c for any positive number a, b and c
-// This function uses a very efficient modular exponentiation algorithm to reduce the number of operations to perform modular exponentiation
+// This function uses a very efficient modular exponentiation algorithm to reduce the number of operations
 long long mod_exp(long long base,long long exponent,long long mod) {
     if (mod == 1)
         return 0; // Any number mod 1 is always 0

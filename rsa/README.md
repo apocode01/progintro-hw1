@@ -28,7 +28,7 @@ In order for the program to run, it must be executed with:
 
 1) One argument being either 'enc' (for encryption) or 'dec' (for decryption)
 2) Four more arguments being positive integers
-- Constraint: the message m must be less than N = p*q.
+- Constraint: the message m must be less than N = p·q.
 - Constraint: the integers p and q are prime.
 - Constraint: the integer e is coprime with ϕ(N).
 - Constraint: the integers e and d are inverses, that is: e · d mod ϕ(N) = 1.

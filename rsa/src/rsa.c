@@ -57,7 +57,7 @@ int main(int argc, char * argv[]) {
         return 1;
     }
 
-    // Check if e * d mod φ(N) is not 1
+    // Check if e · d mod φ(N) is not 1
     if ((e*d)%phi_N != 1) {
         printf("e * d mod phi(N) is not 1\n");
         return 1;
@@ -116,7 +116,7 @@ long long gcd(long long num1,long long num2) {
 }
 
 // The phi function calculates the value φ(N) where N is the product of two prime numbers
-// Since φ(a*b) = φ(a) * φ(b) and φ(c) = c-1 for any prime number c then the function only has to calculate: φ(Ν) = φ(num1 * num2) = (num1-1)*(num2-1) 
+// Since φ(a·b) = φ(a)·φ(b) and φ(c) = c-1 for any prime number c then the function only has to calculate: φ(Ν) = φ(num1 · num2) = (num1-1)·(num2-1) 
 long long phi(long long num1,long long num2) {
     return (num1-1)*(num2-1);
 }

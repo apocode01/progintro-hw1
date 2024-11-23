@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> // For the atoll() function
 
 /* 
  - Filename: gcd.c
@@ -11,7 +11,7 @@
 long long gcd(long long num1,long long num2);
 
 int main(int argc, char * argv[]) {
-    // Check if the user has provided 3 arguments (including program name)
+    // Check if the user has provided 3 arguments (including program name). 
     if (argc != 3) {
         printf("Usage: %s <num1> <num2>\n",argv[0]);
         return 1; // Unsuccessful termination with exit code 1

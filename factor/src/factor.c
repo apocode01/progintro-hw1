@@ -11,14 +11,15 @@ int main(int argc, char * argv[]) {
 
     long long semiprime = atoll(argv[1]);
 
-    for (long long i = 2 ; i<=semiprime ; i++) {
-        for (long long j = 2 ; j<=semiprime ; j++) {
+    for (long long i = 2 ; i<=semiprime/2+1 ; i = (i==2 ? 3 : i+2)) {
+        for (long long j = 2 ; j<=semiprime/2+1 ; j = (j==2 ? 3 : j+2)) {
             if ( (is_prime(i) || is_prime(j)) && (i*j==semiprime) ) {
                 printf("Factors: %lld %lld\n",i,j);
                 return 0;
             }
         }
     }
+    printf("Not a semiprime\n");
     return 0;
 }
 

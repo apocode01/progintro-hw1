@@ -11,16 +11,20 @@ int main(int argc, char * argv[]) {
 
     long long semiprime = atoll(argv[1]);
 
-    for (long long i = 2 ; i<=semiprime/2+1 ; i = (i==2 ? 3 : i+2)) {
-        for (long long j = 2 ; j<=semiprime/2+1 ; j = (j==2 ? 3 : j+2)) {
-            if ( (is_prime(i) || is_prime(j)) && (i*j==semiprime) ) {
-                printf("Factors: %lld %lld\n",i,j);
-                return 0;
-            }
-        }
+    if ( is_prime(semiprime/2) && 2*(semiprime/2)==semiprime ) {
+        printf("Factors: %d %lld\n",2,semiprime/2);  
+        return 0;
     }
+    
+    for (long long i = 3 ; i*i<=semiprime ; i += 2) {
+        if ( is_prime(i) && semiprime%i==0 ) {
+            printf("Factors: %lld %lld\n",i,semiprime/i);  
+            return 0;
+        } 
+    }
+
     printf("Not a semiprime\n");
-    return 0;
+    return 1;
 }
 
 // The is_prime function returns 0 if a number is not prime and 1 if a number is prime

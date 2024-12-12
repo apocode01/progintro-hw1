@@ -93,10 +93,14 @@ int main(int argc, char * argv[]) {
 
 // The is_prime function returns 0 if a number is not prime and 1 if a number is prime
 int is_prime(long long num) {
-    if (num<=1) {
+    if (num<=1 || (num!=2 && num%2==0)) {
         return 0;
     }
-    for (long long i = 2 ; i*i<=num ; i++) {
+    // Number 2 is the only even prime number
+    else if (num==2) {
+        return 1;
+    }
+    for (long long i = 3 ; i*i<=num ; i+=2) {
         if (num % i == 0) {
             return 0;
         }

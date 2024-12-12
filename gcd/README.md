@@ -57,7 +57,7 @@ For the implementation, I made the assumption that if the user does not give 2 n
 
 Check if the user has provided 3 arguments (including program name):
 
-```sh
+```c
 if (argc != 3) {
     printf("Usage: %s <num1> <num2>\n",argv[0]);
     return 1;
@@ -66,7 +66,7 @@ if (argc != 3) {
 
 Check if the user has given non-zero integers for arguments (if the user gives a set of characters for an argument then the `atoll` function will convert them to the number 0):
 
-```sh
+```c
 long long num1 = atoll(argv[1]);
 long long num2 = atoll(argv[2]);
 if (num1 == 0 || num2 == 0) {

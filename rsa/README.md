@@ -76,7 +76,7 @@ So combining these together we have: φ(Ν) = φ(num1 · num2) = (num1-1) · (nu
 
 Code: 
 
-```sh
+```c
 long long phi(long long num1,long long num2) {
     return (num1-1)*(num2-1);
 }
@@ -88,7 +88,7 @@ This function uses a very efficient modular exponentiation algorithm to reduce t
 
 Code: 
 
-```sh
+```c
 long long mod_exp(long long base,long long exponent,long long mod) {
     if (mod == 1)
         return 0; 

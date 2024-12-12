@@ -51,7 +51,7 @@ Factors: 613 16031563
 
 For the implementation, I considered the fact that all prime numbers are odd apart from 2. Therefore, I seperately checked if 2 is a factor and then checked for odd factors until the square root of the semiprime.
 
-In addition, if we find a prime factor *i* then the second factor is *semiprime/i*, **only if it is also a prime number**.
+In addition, if we find a prime factor **i** then the second factor is **semiprime/i**, only if it is also a prime number.
 
 In C code: 
 

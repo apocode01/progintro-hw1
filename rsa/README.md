@@ -67,7 +67,7 @@ $ echo 27187 | ./rsa dec 17 26153 131 229
 
 ## Technical Details
 
-For the implementation, I created the ```long long phi(long long num1,long long num2)``` function which only returns ```(num1-1)*(num2-1)``` because:
+For the implementation, I created the ```long long phi(long long num1,long long num2)``` function that calculates the value φ(N) where N is the product of two prime numbers. The function only returns ```(num1-1)*(num2-1)``` because:
 
 1) φ(a·b) = φ(a)·φ(b)
 2) φ(c) = c-1 for any prime number c
@@ -85,6 +85,8 @@ long long phi(long long num1,long long num2) {
 I also used a ```long long mod_exp(long long base,long long exponent,long long mod)``` function that calculates the value (a^b) mod c for any positive number a, b and c.
 
 This function uses a very efficient modular exponentiation algorithm to reduce the number of operations.
+
+Wikipedia page: https://en.wikipedia.org/wiki/Modular_exponentiation 
 
 Code: 
 

@@ -24,7 +24,7 @@ gcc -O3 -Wall -Wextra -Werror -o factor factor.c
 
 ## Usage
 
-In order for the program to run, it must be executed with a positive semiprime integer as an argument:
+In order for the program to run correctly, it must be executed with a positive semiprime integer as an argument:
 
 ```sh
 ./factor <semiprime>
@@ -41,8 +41,8 @@ $ ./factor 9
 Factors: 3 3
 $ ./factor 46
 Factors: 2 23
-$ ./factor 93
-Factors: 3 31
+$ ./factor 6944963
+Factors: 877 7919
 $ ./factor 9827348119
 Factors: 613 16031563
 ```
@@ -51,7 +51,7 @@ Factors: 613 16031563
 
 For the implementation, I considered the fact that all prime numbers are odd apart from 2. Therefore, I seperately checked if 2 is a factor and then checked for odd factors until the square root of the semiprime.
 
-In addition, if we find a prime factor **i** then the second factor is **semiprime/i**, only if it is also a prime number.
+In addition, if we find a factor **i** then the second factor is **semiprime/i**.
 
 In C code: 
 

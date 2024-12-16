@@ -93,6 +93,7 @@ int main(int argc, char * argv[]) {
 
 // The is_prime function returns 0 if a number is not prime and 1 if a number is prime
 int is_prime(long long num) {
+    // Numbers smaller or equal to 1 and even numbers (except from 2) are not prime numbers
     if (num<=1 || (num!=2 && num%2==0)) {
         return 0;
     }

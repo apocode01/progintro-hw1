@@ -1,6 +1,5 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Fi7KL10s)
-# Εργασία #1
+# progintro-hw1
 
-Για να προετοιμάσεις την υποβολή σου, διάβασε [εδώ](https://progintro.github.io/assets/pdf/hw1.pdf).
+My solution for the second homework assignment in UoA's 'Introduction to Programming' course, Fall 2024.
 
-Αυτό το αρχείο (και το repository) μπορείς να το επεξεργαστείς / αλλάξεις όσο επιθυμείς με την υποβολή σου.
+The PDF describing the assignment can be found [here](./hw1.pdf) (written in Greek)
